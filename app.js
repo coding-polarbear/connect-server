@@ -39,17 +39,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileupload());
 app.use(authentication);
 
+app.use((req, res, next) => {
+    if(req.body && req.body.data)
+        req.body = JSON.parse(req.body.data);
+    next();
+});
+
 app.use('/', index);
 app.use('/users', users);
 app.use('/sign', signs);
 app.use('/schools', schools);
 app.use('/channels', channels);
 
-app.use((req, res, next) => {
-    if(req.body && req.body.data)
-        req.body = JSON.parse(req.body.data);
-    next();
-});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
