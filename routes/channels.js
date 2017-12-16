@@ -53,6 +53,7 @@ router.post('/schools/classes', (req, res) => {
         }
         if(channel) {
             channel.contents.push({content: req.body.content, aurthor: req.user.username});
+            console.log(channel.contents);
             channel.save();
             res.json({result : {success :true, message: '성공적으로 등록되었습니다!'}});
         } else {
