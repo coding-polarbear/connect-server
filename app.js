@@ -18,6 +18,8 @@ mongoose.connect('mongodb://localhost:27017/test',
 var index = require('./routes/index');
 var users = require('./routes/users');
 var signs = require('./routes/sign');
+var schools = require('./routes/schools');
+
 var authentication = require('./tools/authentication');
 
 var app = express();
@@ -43,6 +45,8 @@ app.use(authentication);
 app.use('/', index);
 app.use('/users', users);
 app.use('/sign', signs);
+app.use('/schools', schools);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
