@@ -82,8 +82,9 @@ router.post('/schools/classes/withImages', (req, res) => {
 });
 
 router.get('/schools/classes/:schoolName', (req, res) => {
-    Channel.findOne({schoolName : req.params.id}, (err, channel) => {
+    Channel.findOne({schoolName : req.params.schoolName}, (err, channel) => {
         if(err) {
+            console.log(err);
             res.status(200).json({result : {success : false, message : '알 수 없는 오류가 발생하였습니다!'}});
         }
         if(channel) {
