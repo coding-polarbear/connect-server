@@ -4,7 +4,8 @@ var channelSchema = new mongoose.Schema({
     className : {type : String, required: true},
     contents : [{
         date : {type : Date, default : Date.now()},
-        content : {type : String, required : true}
+        content : {type : String, required : true},
+        aurthor : {type : String, required : true}
     }]
 });
 
