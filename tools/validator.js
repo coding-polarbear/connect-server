@@ -4,7 +4,8 @@ const CHECK_LIST = {
         { code: 2, property: 'password', reg: /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,20}$/, message: '6~20글자의 대소문자, 숫자가 포함된 암호가 필요합니다.' },
         { code: 3, property : 'schoolName', reg: /^.{1,30}$/m, message : '학교 이름을 제대로 입력하세요'},
         { code: 4, property : 'position', reg: /^(parent|teacher)$/, message : 'parent or teacher를 입력하세요' },
-        { code: 5, property: 'isAdmin', reg: /^(true|false)$/, message: '권한을 설정해주세요' }
+        { code: 5, property: 'isAdmin', reg: /^(true|false)$/, message: '권한을 설정해주세요' },
+        { code: 3, property : 'className', reg: /^.{1,30}$/m, message : '학교 이름을 제대로 입력하세요'},
     ],
     diary : [
         {code : 3, property : 'title', reg : /^.{1,20}$/m, message : '제목은 20자 이내로 입력해야 합니다!'},
