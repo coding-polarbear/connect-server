@@ -9,7 +9,14 @@ router.post('/', (req, res) => {
         if(err)
             res.status(200).json({result : {success :false, message : '알 수 없는 오류가 발생하였습니다!'}});
         if(user && user.password === req.body.password) {
-            var payload = {username : user.username, classNames : user.classNames, schoolName: user.schoolName, position : user.Position};
+            var payload = {
+                username : user.username,
+                className : user.className,
+                schoolName: user.schoolName,
+                position : user.Position,
+                isAdmin : user.isAdmin
+            };
+            console.log(payload);
             var token = jwt.sign(payload, config.salt, {algorithm : config.jwtAlgorithm});
             user.password = undefined;
             res.json({

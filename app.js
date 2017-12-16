@@ -19,6 +19,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var signs = require('./routes/sign');
 var schools = require('./routes/schools');
+var channels = require('./routes/channels');
 
 var authentication = require('./tools/authentication');
 
@@ -46,6 +47,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/sign', signs);
 app.use('/schools', schools);
+app.use('/channels', channels);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

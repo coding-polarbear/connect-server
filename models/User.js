@@ -5,9 +5,7 @@ var userSchema = new mongoose.Schema({
     schoolName : {type : String, required : true},
     position : {type : String, required : true},
     isAdmin : {type : String, required : true},
-    classNames : [{
-        name : {type : String, required : true}
-    }]
+    className : {type : String, required : true}
 });
 
 module.exports = mongoose.model('user', userSchema);

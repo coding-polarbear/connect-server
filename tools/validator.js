@@ -41,7 +41,7 @@ module.exports = {
     },
 
     isAdmin: (req, res) => {
-        if (req.user.isAdmin === true) return true;
+        if (req.user.isAdmin === 'true') return true;
         res.status(200).json({
             result: { success: false, message: '권한이 부족합니다.' }
         }).end();

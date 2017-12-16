@@ -46,10 +46,9 @@ router.post('/add', (req, res) => {
             console.log(err.stack);
             res.status(200).json({result : {success: false, message: '알 수 없는 오류가 발생하였습니다!'}});
         }
-            school.classNames.push({name: req.body.className}, (err) => {
-                if(err) res.status(200).json({result: {success: false, message: err.message}});
-            });
+            school.classNames.push({name: req.body.className});
             school.save();
+
             Channel.create({schoolName: req.body.schoolName, className: req.body.className}, (err, channel) => {
                 if (err) {
                     console.log(err.stack);

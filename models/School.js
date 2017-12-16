@@ -7,7 +7,7 @@ var schoolSchema = new mongoose.Schema({
     contents : [{
         aurthor : {type : String, required : true},
         date : {type : Date, default : Date.now()},
-        content : {type : Date, required : true}
+        content : {type : String, required : true}
     }]
 });
 module.exports = mongoose.model('school', schoolSchema);
