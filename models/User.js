@@ -4,6 +4,7 @@ var userSchema = new mongoose.Schema({
     password : {type : String, required : true},
     schoolName : {type : String, required : true},
     position : {type : String, required : true},
+    isAdmin : {type : String, required : true},
     classNames : [{
         name : {type : String, required : true}
     }]
